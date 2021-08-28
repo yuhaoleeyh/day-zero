@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Tasks from "components/Tasks/Tasks.js";
 import CustomTabs from "components/CustomTabs/CustomTabs.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -11,10 +11,14 @@ import CreditOwed from "./CreditOwed";
 import LengthOfCreditHistory from "./LengthOfCreditHistory";
 import NewCredit from "./NewCredit";
 import PaymentHistory from './PaymentHistory';
+import Slider from '@material-ui/core/Slider';
 
 
 export default function Explore() {
   // eslint-disable-next-line react/react-in-jsx-scope
+  const [paymentHistory, setPaymentHistory] = useState(0);
+  const [creditOwed, setCreditOwed] = useState(0);
+  const [creditHistoryLength, setCreditHistoryLength] = useState(0);
   return <div>
       
        <div className = "text-center">
@@ -24,6 +28,14 @@ export default function Explore() {
         <div className = "text-center">
             Calculate hypothetical credit score ratings relative to other users, trained with our state-of-the-art deep learning model.  
         </div>
+
+
+        <Slider onChange={ (e, val) => setPaymentHistory(val) }  
+        onDragStop={ (e) => setPaymentHistory(val)}/>
+
+        <div>{paymentHistory}</div>
+        <div>{creditOwed}</div>
+        <div>{creditHistoryLength}</div>
       
       </div>
 }

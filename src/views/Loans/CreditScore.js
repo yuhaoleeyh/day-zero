@@ -61,7 +61,7 @@ export default function Loans() {
             <CardHeader color="warning" stats icon>
               <p className={classes.cardCategory}>Payment History</p>
               <h3 className={classes.cardTitle}>
-                1.2 <small>%</small>
+                52
               </h3>
             </CardHeader>
             <CardFooter stats>
@@ -80,7 +80,7 @@ export default function Loans() {
           <Card>
             <CardHeader color="success" stats icon>
               <p className={classes.cardCategory}>Credit Owed</p>
-              <h3 className={classes.cardTitle}>$103</h3>
+              <h3 className={classes.cardTitle}>52</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
@@ -93,13 +93,13 @@ export default function Loans() {
         <GridItem xs={12} sm={6} md={2}>
           <Card>
             <CardHeader color="danger" stats icon>
-              <p className={classes.cardCategory}>Length of Credit History</p>
+              <p className={classes.cardCategory}>Credit History</p>
               <h3 className={classes.cardTitle}>75</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
                 <LocalOffer />
-                Tracked from Github
+                Tracked 
               </div>
             </CardFooter>
           </Card>
@@ -107,8 +107,8 @@ export default function Loans() {
         <GridItem xs={12} sm={6} md={2}>
           <Card>
             <CardHeader color="info" stats icon>
-              <p className={classes.cardCategory}>Followers</p>
-              <h3 className={classes.cardTitle}>+245</h3>
+              <p className={classes.cardCategory}>New Credit</p>
+              <h3 className={classes.cardTitle}>38</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
@@ -121,8 +121,8 @@ export default function Loans() {
         <GridItem xs={12} sm={6} md={2}>
           <Card>
             <CardHeader color="info" stats icon>
-              <p className={classes.cardCategory}>Followers</p>
-              <h3 className={classes.cardTitle}>+245</h3>
+              <p className={classes.cardCategory}>Credit Mix</p>
+              <h3 className={classes.cardTitle}>23</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
