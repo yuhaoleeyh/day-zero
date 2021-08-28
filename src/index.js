@@ -32,7 +32,7 @@ ReactDOM.render(
     <Switch>
       <Route path="/admin" component={Admin} />
       <Route path="/rtl" component={RTL} />
-      <Route exact path="/" component={Questions} />
+      <Route exact path="/material-dashboard-react" component={Questions} />
       <Route exact path = "/successfulreferral/hello" component = {SuccessfulReferral}/>
       {/* <Redirect from="/hello" to="/admin/dashboard" /> */}
     </Switch>
