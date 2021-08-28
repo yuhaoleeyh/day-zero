@@ -38,7 +38,7 @@ export default function Explore() {
         rejectUnauthorized: false
        });
 
-    axios.post("http://etsh-alb-flask-1876474072.ap-southeast-1.elb.amazonaws.com/credit", dict, { httpsAgent: agent })
+    axios.post("https://api.day-zero.xyz/credit", dict, { httpsAgent: agent })
     .then(response => {
         console.log("GENIUS")
         setCreditScore(response.data.credit_percentile)

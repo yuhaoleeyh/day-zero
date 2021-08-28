@@ -55,11 +55,9 @@ export default function Loans() {
         rejectUnauthorized: false
        });
 
-    axios.get("http://etsh-alb-flask-1876474072.ap-southeast-1.elb.amazonaws.com/credit", { httpsAgent: agent })
+    axios.get("https://api.day-zero.xyz/credit", { httpsAgent: agent })
     .then(response => {
-        console.log("GENIUS")
         setCreditScoreMetrics(response.data)
-        console.log(creditScoreMetrics)
     });
 }, []); // See Note 2
 
