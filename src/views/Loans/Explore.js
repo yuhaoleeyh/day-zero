@@ -12,6 +12,10 @@ import LengthOfCreditHistory from "./LengthOfCreditHistory";
 import NewCredit from "./NewCredit";
 import PaymentHistory from './PaymentHistory';
 import Slider from '@material-ui/core/Slider';
+import axios from 'axios';
+import Typography from '@material-ui/core/Typography';
+import './explore.css';
+
 
 
 export default function Explore() {
@@ -19,6 +23,24 @@ export default function Explore() {
   const [paymentHistory, setPaymentHistory] = useState(0);
   const [creditOwed, setCreditOwed] = useState(0);
   const [creditHistoryLength, setCreditHistoryLength] = useState(0);
+  const [creditScore, setCreditScore] = useState(null);
+
+  const changePaymentHistory = (val) => {
+    setPaymentHistory(val);
+    setCreditScore(paymentHistory + creditOwed + creditHistoryLength)
+  }
+
+  const changeCreditOwed = (val) => {
+    setCreditOwed(val);
+    setCreditScore(paymentHistory + creditOwed + creditHistoryLength)
+    }
+
+    const changeCreditHistoryLength = (val) => {
+        setCreditHistoryLength(val);
+        setCreditScore(paymentHistory + creditOwed + creditHistoryLength)
+    }
+
+
   return <div>
       
        <div className = "text-center">
@@ -29,13 +51,58 @@ export default function Explore() {
             Calculate hypothetical credit score ratings relative to other users, trained with our state-of-the-art deep learning model.  
         </div>
 
+        <div className = "text-center">
+            <h2>
+                {creditScore === null ? "-" : creditScore} 
+            </h2>
+        </div>
 
-        <Slider onChange={ (e, val) => setPaymentHistory(val) }  
-        onDragStop={ (e) => setPaymentHistory(val)}/>
+        <Typography id="discrete-slider-always"  gutterBottom>
+        How many late payments do you have? (Payment History)
+        </Typography>
+        <div className = "padding-top">
+        <Slider 
+        className = "padding-top"
+        defaultValue={0}
+        onChange={ (e, val) => changePaymentHistory(val) }  
+        onDragStop={ (e) => changePaymentHistory(val)}
+        // getAriaValueText={"Number of late payments"}
+        valueLabelDisplay="on"
+        />
+        </div>
+        
+        <Typography id="discrete-slider-always" gutterBottom>
+        How much credit do you owe? (Credit Owed)
+        </Typography>
+        <div className = "padding-top">
+        <Slider
+        defaultValue={0}
+        onChange={ (e, val) => changeCreditOwed(val) }  
+        onDragStop={ (e) => changeCreditOwed(val)}
+        // getAriaValueText={"How much credit you owe"}
+        valueLabelDisplay="on"
+        className = "padding-top"
+        />
+        </div>
 
+        <Typography id="discrete-slider-always" gutterBottom>
+        How long have you held your credit accounts? (Length of credit history)
+        </Typography>
+        <div className = "padding-top">
+        <Slider
+        className = "padding-top"
+                defaultValue={0}
+                onChange={ (e, val) => changeCreditHistoryLength(val) }  
+                onDragStop={ (e) => changeCreditHistoryLength(val)}
+                // getAriaValueText={"How long have you held your credit accounts"}
+                valueLabelDisplay="on"
+                />
+
+</div>
+{/* 
         <div>{paymentHistory}</div>
         <div>{creditOwed}</div>
-        <div>{creditHistoryLength}</div>
+        <div>{creditHistoryLength}</div> */}
       
       </div>
 }

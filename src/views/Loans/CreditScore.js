@@ -150,44 +150,28 @@ export default function Loans() {
                 tabName: "Credit owed",
                 tabIcon: Code,
                 tabContent: (
-                  <Tasks
-                    checkedIndexes={[0]}
-                    tasksIndexes={[0]}
-                    tasks={loans}
-                  />
+                  <CreditOwed/>
                 ),
               },
               {
                 tabName: "Length of credit history",
                 tabIcon: Cloud,
                 tabContent: (
-                  <Tasks
-                    checkedIndexes={[0]}
-                    tasksIndexes={[0, 1]}
-                    tasks={insurance}
-                  />
+                  <LengthOfCreditHistory/>
                 ),
               },
               {
                 tabName: "New Credit",
                 tabIcon: BugReport,
                 tabContent: (
-                  <Tasks
-                    checkedIndexes={[0]}
-                    tasksIndexes={[0, 1]}
-                    tasks={investments}
-                  />
+                  <NewCredit/>
                 ),
               },
               {
                 tabName: "Credit Mix",
                 tabIcon: BugReport,
                 tabContent: (
-                  <Tasks
-                    checkedIndexes={[0]}
-                    tasksIndexes={[0, 1]}
-                    tasks={investments}
-                  />
+                  <CreditMix/>
                 ),
               },
             ]}

@@ -85,7 +85,8 @@ export default function Dashboard() {
       <GridContainer>
       <GridItem xs={12} sm={12} md={4}>
           <Card chart>
-            <CardHeader color="danger">
+          {/* "color="danger" */}
+            <CardHeader className = "blue-colour">
               <ChartistGraph
                 className="ct-chart"
                 data={completedTasksChart.data}
@@ -115,7 +116,7 @@ export default function Dashboard() {
         </GridItem>
         <GridItem xs={12} sm={12} md={4}>
           <Card chart>
-            <CardHeader color="success">
+            <CardHeader className = "blue-colour">
               <ChartistGraph
                 className="ct-chart"
                 data={dailySalesChart.data}
@@ -143,7 +144,7 @@ export default function Dashboard() {
         </GridItem>
         <GridItem xs={12} sm={12} md={4}>
           <Card chart>
-            <CardHeader color="warning">
+            <CardHeader className = "blue-colour">
               <ChartistGraph
                 className="ct-chart"
                 data={emailsSubscriptionChart.data}

@@ -13,6 +13,8 @@ import NewCredit from "./NewCredit";
 import PaymentHistory from './PaymentHistory';
 import Explore from './Explore';
 import CreditScore from './CreditScore';
+import './explore.css';
+
 
 
 export default function Loans() {
@@ -20,7 +22,8 @@ export default function Loans() {
   return <div>
       <GridItem xs={12} sm={12} md={12}>
           <CustomTabs
-            headerColor="success"
+          className = "blue-colour"
+            // headerColor="success"
             tabs={[
               {
                 tabName: "Loan Profile",

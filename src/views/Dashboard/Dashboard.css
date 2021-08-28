@@ -1,3 +1,17 @@
 .text-center {
     text-align: center;
 }
+
+.dark-colour {
+    background-color: #381f08 !important; 
+    margin: 0 15px;
+    padding: 15px;
+    margin-top: -20px;
+}
+
+.blue-colour {
+    background-color: #081338 !important;
+    margin: 0 15px;
+    padding: 15px;
+    margin-top: -20px;
+}
