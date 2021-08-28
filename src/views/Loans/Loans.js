@@ -20,12 +20,13 @@ import './explore.css';
 export default function Loans() {
   // eslint-disable-next-line react/react-in-jsx-scope
   return <div>
-      <GridItem xs={12} sm={12} md={12}>
+      <GridItem xs={12} sm={12} md={12} >
           <CustomTabs
-          className = "blue-colour"
-            // headerColor="success"
+        //   className = "blue-colour"
+            headerColor="success"
             tabs={[
               {
+                className: "blue-colour",
                 tabName: "Loan Profile",
                 tabIcon: BugReport,
                 tabContent: (

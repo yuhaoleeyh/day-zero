@@ -51,7 +51,7 @@ const useStyles = makeStyles(styles);
 const VALUES = [ "2018-03-22", "2018-03-23" ]
 
 export default function Dashboard() {
-  const [value, setValue] = useState(0)
+  const [value, setValue] = useState(0);
   const classes = useStyles();
   return (
     <div>

@@ -40,6 +40,8 @@ import Questions from "views/Questions/Questions.js";
 import Loans from "views/Loans/Loans";
 import Insurance from "views/Insurance/Insurance";
 import Investments from "views/Investments/Investments";
+import Referral from "views/Referral/Referral"
+import Trophy from "views/Trophy/Trophy"
 
 const dashboardRoutes = [
   {
@@ -75,61 +77,77 @@ const dashboardRoutes = [
     layout: "/admin",
   },
   {
-    path: "/questions",
-    name: "Questions",
-    rtlName: "لوحة القيادة",
-    icon: QuestionAnswerIcon,
-    component: Questions,
-    layout: "/admin",
-  },
-  {
-    path: "/user",
-    name: "User Profile",
-    rtlName: "ملف تعريفي للمستخدم",
-    icon: Person,
-    component: UserProfile,
-    layout: "/admin",
-  },
-  {
-    path: "/table",
-    name: "Table List",
-    rtlName: "قائمة الجدول",
-    icon: "content_paste",
-    component: TableList,
-    layout: "/admin",
-  },
-  {
-    path: "/typography",
-    name: "Typography",
+    path: "/referral",
+    name: "Referral",
     rtlName: "طباعة",
     icon: LibraryBooks,
-    component: Typography,
+    component: Referral,
     layout: "/admin",
   },
   {
-    path: "/icons",
-    name: "Icons",
-    rtlName: "الرموز",
-    icon: BubbleChart,
-    component: Icons,
+    path: "/trophy",
+    name: "Achievements",
+    rtlName: "طباعة",
+    icon: LibraryBooks,
+    component: Trophy,
     layout: "/admin",
   },
-  {
-    path: "/maps",
-    name: "Maps",
-    rtlName: "خرائط",
-    icon: LocationOn,
-    component: Maps,
-    layout: "/admin",
-  },
-  {
-    path: "/notifications",
-    name: "Notifications",
-    rtlName: "إخطارات",
-    icon: Notifications,
-    component: NotificationsPage,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/questions",
+  //   name: "Questions",
+  //   rtlName: "لوحة القيادة",
+  //   icon: QuestionAnswerIcon,
+  //   component: Questions,
+  //   layout: "/admin",
+  // },
+  // {
+  //   path: "/user",
+  //   name: "User Profile",
+  //   rtlName: "ملف تعريفي للمستخدم",
+  //   icon: Person,
+  //   component: UserProfile,
+  //   layout: "/admin",
+  // },
+  // {
+  //   path: "/table",
+  //   name: "Table List",
+  //   rtlName: "قائمة الجدول",
+  //   icon: "content_paste",
+  //   component: TableList,
+  //   layout: "/admin",
+  // },
+  // {
+  //   path: "/typography",
+  //   name: "Typography",
+  //   rtlName: "طباعة",
+  //   icon: LibraryBooks,
+  //   component: Typography,
+  //   layout: "/admin",
+  // },
+  // {
+  //   path: "/icons",
+  //   name: "Icons",
+  //   rtlName: "الرموز",
+  //   icon: BubbleChart,
+  //   component: Icons,
+  //   layout: "/admin",
+  // },
+  // {
+  //   path: "/maps",
+  //   name: "Maps",
+  //   rtlName: "خرائط",
+  //   icon: LocationOn,
+  //   component: Maps,
+  //   layout: "/admin",
+  // },
+  // {
+  //   path: "/notifications",
+  //   name: "Notifications",
+  //   rtlName: "إخطارات",
+  //   icon: Notifications,
+  //   component: NotificationsPage,
+  //   layout: "/admin",
+  // },
   // {
   //   path: "/rtl-page",
   //   name: "RTL Support",
@@ -138,14 +156,14 @@ const dashboardRoutes = [
   //   component: RTLPage,
   //   layout: "/rtl",
   // },
-  // {
-  //   path: "/upgrade-to-pro",
-  //   name: "Upgrade To PRO",
-  //   rtlName: "التطور للاحترافية",
-  //   icon: Unarchive,
-  //   component: UpgradeToPro,
-  //   layout: "/admin",
-  // },
+  {
+    path: "/upgrade-to-pro",
+    name: "Make a lifetime update",
+    rtlName: "التطور للاحترافية",
+    icon: Unarchive,
+    component: UpgradeToPro,
+    layout: "/admin",
+  },
   
 
 ];

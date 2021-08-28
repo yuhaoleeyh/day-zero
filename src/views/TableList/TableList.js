@@ -48,22 +48,22 @@ export default function TableList() {
       <GridItem xs={12} sm={12} md={12}>
         <Card>
           <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>Simple Table</h4>
+            <h4 className={classes.cardTitleWhite}>Achievements</h4>
             <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
+              Those who are on the path to finnacial independence and/or have referred others to the journey!
             </p>
           </CardHeader>
           <CardBody>
             <Table
               tableHeaderColor="primary"
-              tableHead={["Name", "Country", "City", "Salary"]}
+              tableHead={["Name", "Country", "City", "Points"]}
               tableData={[
-                ["Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"],
-                ["Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"],
-                ["Sage Rodriguez", "Netherlands", "Baileux", "$56,142"],
-                ["Philip Chaney", "Korea, South", "Overland Park", "$38,735"],
-                ["Doris Greene", "Malawi", "Feldkirchen in Kärnten", "$63,542"],
-                ["Mason Porter", "Chile", "Gloucester", "$78,615"],
+                ["Dakota Rice", "Niger", "Oud-Turnhout", "36,738"],
+                ["Minerva Hooper", "Curaçao", "Sinaai-Waas", "23,789"],
+                ["Sage Rodriguez", "Netherlands", "Baileux", "56,142"],
+                ["Philip Chaney", "Korea, South", "Overland Park", "38,735"],
+                ["Doris Greene", "Malawi", "Feldkirchen in Kärnten", "63,542"],
+                ["Mason Porter", "Chile", "Gloucester", "78,615"],
               ]}
             />
           </CardBody>

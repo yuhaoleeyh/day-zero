@@ -23,6 +23,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Admin from "layouts/Admin.js";
 import RTL from "layouts/RTL.js";
 import Questions from "layouts/Questions.js";
+import SuccessfulReferral from "layouts/Successful.js";
 
 import "assets/css/material-dashboard-react.css?v=1.10.0";
 
@@ -31,8 +32,9 @@ ReactDOM.render(
     <Switch>
       <Route path="/admin" component={Admin} />
       <Route path="/rtl" component={RTL} />
-      <Route path="/" component={Questions} />
-      <Redirect from="/hello" to="/admin/dashboard" />
+      <Route exact path="/" component={Questions} />
+      <Route exact path = "/successfulreferral/hello" component = {SuccessfulReferral}/>
+      {/* <Redirect from="/hello" to="/admin/dashboard" /> */}
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")
