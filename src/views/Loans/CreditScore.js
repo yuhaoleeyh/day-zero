@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Tasks from "components/Tasks/Tasks.js";
 import CustomTabs from "components/CustomTabs/CustomTabs.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -39,17 +39,35 @@ import Slider from '@material-ui/core/Slider';
 import Typography from '@material-ui/core/Typography';
 
 import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
+import axios from 'axios';
+import * as https from 'https'
 
 const useStyles = makeStyles(styles);
 export default function Loans() {
   // eslint-disable-next-line react/react-in-jsx-scope
   const classes = useStyles();
 
+  const [creditScoreMetrics, setCreditScoreMetrics] = useState({})
+
+  useEffect(() => {
+    console.log("MAYBE");
+    const agent = new https.Agent({  
+        rejectUnauthorized: false
+       });
+
+    axios.get("http://etsh-alb-flask-1876474072.ap-southeast-1.elb.amazonaws.com/credit", { httpsAgent: agent })
+    .then(response => {
+        console.log("GENIUS")
+        setCreditScoreMetrics(response.data)
+        console.log(creditScoreMetrics)
+    });
+}, []); // See Note 2
+
   return <div>
       
       <div className = "text-center">
           <h2>Your credit score is in the: </h2>
-          <h1>37th percentile</h1>
+          <h1>{creditScoreMetrics.credit_percentile}th percentile</h1>
       </div>
       <div className = "text-center">
           <h4>Carefully curated by our deep learning model, which studies your profile and makes tailored recommendations.</h4>
@@ -61,7 +79,7 @@ export default function Loans() {
             <CardHeader color="warning" stats icon>
               <p className={classes.cardCategory}>Payment History</p>
               <h3 className={classes.cardTitle}>
-                52
+                {creditScoreMetrics.payment_history}
               </h3>
             </CardHeader>
             <CardFooter stats>
@@ -80,7 +98,7 @@ export default function Loans() {
           <Card>
             <CardHeader color="success" stats icon>
               <p className={classes.cardCategory}>Credit Owed</p>
-              <h3 className={classes.cardTitle}>52</h3>
+              <h3 className={classes.cardTitle}>{creditScoreMetrics.credit_owed}</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
@@ -94,7 +112,7 @@ export default function Loans() {
           <Card>
             <CardHeader color="danger" stats icon>
               <p className={classes.cardCategory}>Credit History</p>
-              <h3 className={classes.cardTitle}>75</h3>
+              <h3 className={classes.cardTitle}>{creditScoreMetrics.credit_history_length}</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
@@ -108,7 +126,7 @@ export default function Loans() {
           <Card>
             <CardHeader color="info" stats icon>
               <p className={classes.cardCategory}>New Credit</p>
-              <h3 className={classes.cardTitle}>38</h3>
+              <h3 className={classes.cardTitle}>{creditScoreMetrics.new_credit}</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
@@ -122,7 +140,7 @@ export default function Loans() {
           <Card>
             <CardHeader color="info" stats icon>
               <p className={classes.cardCategory}>Credit Mix</p>
-              <h3 className={classes.cardTitle}>23</h3>
+              <h3 className={classes.cardTitle}>{creditScoreMetrics.credit_mix}</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>

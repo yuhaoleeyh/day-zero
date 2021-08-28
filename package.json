@@ -20,7 +20,9 @@
     "react-horizontal-timeline": "^1.5.3",
     "react-router-dom": "5.2.0",
     "react-scripts": "4.0.3",
-    "react-swipeable-views": "0.13.9"
+    "react-swipeable-views": "0.13.9",
+    "yahoo-finance": "^0.3.7",
+    "yahoo-stock-prices": "^1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

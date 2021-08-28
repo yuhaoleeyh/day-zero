@@ -54,6 +54,8 @@ export default function Referral() {
 
   }
 
+
+
   return <div className = "text-center">
 
       <GridContainer>
