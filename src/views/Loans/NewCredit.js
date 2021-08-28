@@ -11,7 +11,7 @@ export default function NewCredit() {
           Avoid opening too many new credit accounts. 
       </ul>
       <ul>
-
+        
       </ul>
       
   </p>

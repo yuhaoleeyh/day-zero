@@ -15,6 +15,7 @@ import Slider from '@material-ui/core/Slider';
 import axios from 'axios';
 import Typography from '@material-ui/core/Typography';
 import './explore.css';
+import * as https from 'https'
 
 
 
@@ -27,7 +28,21 @@ export default function Explore() {
 
   const changePaymentHistory = (val) => {
     setPaymentHistory(val);
-    setCreditScore(paymentHistory + creditOwed + creditHistoryLength)
+    let dict = {
+        "credit_history_length": creditHistoryLength,
+        "credit_owed": creditOwed,
+        "payment_history": paymentHistory
+    }
+
+    const agent = new https.Agent({  
+        rejectUnauthorized: false
+       });
+
+    axios.post("http://etsh-alb-flask-1876474072.ap-southeast-1.elb.amazonaws.com/credit", dict, { httpsAgent: agent })
+    .then(response => {
+        console.log("GENIUS")
+        setCreditScore(response.data.credit_percentile)
+    });
   }
 
   const changeCreditOwed = (val) => {
