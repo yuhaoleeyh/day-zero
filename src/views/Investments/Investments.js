@@ -11,15 +11,31 @@
 
 import React, {useEffect} from 'react';
 import ReactDOM from 'react-dom';
-// import './index.css';
-import { IgrFinancialChart } from 'igniteui-react-charts';
-import { IgrFinancialChartModule } from 'igniteui-react-charts';
-// import StocksHistory from './StocksHistory';
+import { Charts, ChartContainer, ChartRow, YAxis, LineChart } from "react-timeseries-charts";
+import { TimeSeries, TimeRange } from "pondjs";
 
-IgrFinancialChartModule.register();
+
+// IgrFinancialChartModule.register();
 
 export default function Investments() {
     var yahooFinance = require('yahoo-finance');
+
+    const data = {
+        name: "traffic",
+        columns: ["time", "in", "out"],
+        points: [
+            [1400425947000, 52, 41],
+            [1400425948000, 18, 45],
+            [1400425949000, 26, 49],
+            [1400425950000, 93, 81],
+        ]
+    };
+    
+    const series1 = new TimeSeries(data);
+
+    const series2 = new TimeSeries(data);
+
+
 
 //     useEffect(() => {
 //         var SYMBOL = 'AAPL';
@@ -47,32 +63,21 @@ export default function Investments() {
 // //   }
 // });
 //       }, []);
-
-    
-    
-    const data = [5, 6 , 7, 8, 8, 345 ,4,3 ,24, 2,22,424,4 , 24, 2,42,424 ,5,6]
-
     
 
     
         return (
         <div className="container sample" >
-            <div className="container" >
-                <IgrFinancialChart
-                    width="100%"
-                    height="100%"
-                    chartType="Line"
-                    thickness={2}
-                    chartTitle="Google vs Microsoft Changes"
-                    subtitle="Between 2013 and 2017"
-                    yAxisMode="PercentChange"
-                    yAxisTitle="Percent Changed"
-                    negativeOutlines="rgb(213, 94, 0)"
-                    negativeBrushes="Transparent"
-                    brushes="Transparent"
-                    zoomSliderType="None"
-                    dataSource={data}/>
-            </div>
+            <ChartContainer timeRange={series1.timerange()} width={800}>
+    <ChartRow height="200">
+        <YAxis id="axis1" label="AUD" min={0.5} max={1.5} width="60" type="linear" format="$,.2f"/>
+        <Charts>
+            <LineChart axis="axis1" series={series1}/>
+            <LineChart axis="axis2" series={series2}/>
+        </Charts>
+        <YAxis id="axis2" label="Euro" min={0.5} max={1.5} width="80" type="linear" format="$,.2f"/>
+    </ChartRow>
+</ChartContainer>
         </div>
         );
     }

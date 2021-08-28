@@ -35,6 +35,8 @@ ReactDOM.render(
       <Route exact path="/material-dashboard-react" component={Questions} />
       <Route exact path = "/successfulreferral/hello" component = {SuccessfulReferral}/>
       {/* <Redirect from="/hello" to="/admin/dashboard" /> */}
+      {/* <Redirect from="/material-dashboard-react" to="/" /> */}
+
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

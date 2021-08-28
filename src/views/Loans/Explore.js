@@ -79,7 +79,7 @@ export default function Explore() {
         <Slider 
         className = "padding-top"
         defaultValue={0}
-        onChange={ (e, val) => changePaymentHistory(val) }  
+        // onChange={ (e, val) => changePaymentHistory(val) }  
         onDragStop={ (e) => changePaymentHistory(val)}
         // getAriaValueText={"Number of late payments"}
         valueLabelDisplay="on"
@@ -92,8 +92,8 @@ export default function Explore() {
         <div className = "padding-top">
         <Slider
         defaultValue={0}
-        onChange={ (e, val) => changeCreditOwed(val) }  
-        onDragStop={ (e) => changeCreditOwed(val)}
+        // onChange={ (e, val) => changeCreditOwed(val) }  
+        onDragStop={ (e) => changeCreditOwed(e)}
         // getAriaValueText={"How much credit you owe"}
         valueLabelDisplay="on"
         className = "padding-top"
@@ -107,17 +107,17 @@ export default function Explore() {
         <Slider
         className = "padding-top"
                 defaultValue={0}
-                onChange={ (e, val) => changeCreditHistoryLength(val) }  
-                onDragStop={ (e) => changeCreditHistoryLength(val)}
+                // onChange={ (e, val) => changeCreditHistoryLength(val) }  
+                onDragStop={ (e) => changeCreditHistoryLength(e)}
                 // getAriaValueText={"How long have you held your credit accounts"}
                 valueLabelDisplay="on"
                 />
 
 </div>
-{/* 
+
         <div>{paymentHistory}</div>
         <div>{creditOwed}</div>
-        <div>{creditHistoryLength}</div> */}
+        <div>{creditHistoryLength}</div>
       
       </div>
 }
