@@ -37,7 +37,7 @@ import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.js";
 // core components/views for RTL layout
 import RTLPage from "views/RTLPage/RTLPage.js";
 import Questions from "views/Questions/Questions.js";
-import Loans from "views/Loans/CreditScore";
+import Loans from "views/Loans/Loans";
 import Insurance from "views/Insurance/Insurance";
 import Investments from "views/Investments/Investments";
 
@@ -48,6 +48,38 @@ const dashboardRoutes = [
     rtlName: "لوحة القيادة",
     icon: Dashboard,
     component: DashboardPage,
+    layout: "/admin",
+  },
+  {
+    path: "/creditscore",
+    name: "Loans",
+    rtlName: "لوحة القيادة",
+    icon: QuestionAnswerIcon,
+    component: Loans,
+    layout: "/admin",
+  },
+  {
+    path: "/investments",
+    name: "Investments",
+    rtlName: "لوحة القيادة",
+    icon: QuestionAnswerIcon,
+    component: Investments,
+    layout: "/admin",
+  },
+  {
+    path: "/insurance",
+    name: "Insurance",
+    rtlName: "لوحة القيادة",
+    icon: QuestionAnswerIcon,
+    component: Insurance,
+    layout: "/admin",
+  },
+  {
+    path: "/questions",
+    name: "Questions",
+    rtlName: "لوحة القيادة",
+    icon: QuestionAnswerIcon,
+    component: Questions,
     layout: "/admin",
   },
   {
@@ -114,38 +146,7 @@ const dashboardRoutes = [
   //   component: UpgradeToPro,
   //   layout: "/admin",
   // },
-  {
-    path: "/questions",
-    name: "Questions",
-    rtlName: "لوحة القيادة",
-    icon: QuestionAnswerIcon,
-    component: Questions,
-    layout: "/admin",
-  },
-  {
-    path: "/creditscore",
-    name: "Loans",
-    rtlName: "لوحة القيادة",
-    icon: QuestionAnswerIcon,
-    component: Loans,
-    layout: "/admin",
-  },
-  {
-    path: "/investments",
-    name: "Investments",
-    rtlName: "لوحة القيادة",
-    icon: QuestionAnswerIcon,
-    component: Investments,
-    layout: "/admin",
-  },
-  {
-    path: "/insurance",
-    name: "Insurance",
-    rtlName: "لوحة القيادة",
-    icon: QuestionAnswerIcon,
-    component: Insurance,
-    layout: "/admin",
-  },
+  
 
 ];
 

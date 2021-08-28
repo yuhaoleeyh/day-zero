@@ -40,5 +40,5 @@ module.exports = {
   server,
   investments,
   loans,
-  insurance
+  insurance,
 };

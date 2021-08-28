@@ -1,7 +1,6 @@
 import React from 'react';
 
-export default function Investemnts() {
+export default function CreditOwed() {
   // eslint-disable-next-line react/react-in-jsx-scope
   return <div>HELLO WORLD</div>;
 }
-
