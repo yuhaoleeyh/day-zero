@@ -21,13 +21,13 @@ import * as https from 'https'
 
 export default function Explore() {
   // eslint-disable-next-line react/react-in-jsx-scope
-  const [paymentHistory, setPaymentHistory] = useState(0);
-  const [creditOwed, setCreditOwed] = useState(0);
+  const [paymentHistory, setPaymentHistory] = useState(80);
+  const [creditOwed, setCreditOwed] = useState(80);
   const [creditHistoryLength, setCreditHistoryLength] = useState(0);
   const [creditScore, setCreditScore] = useState(null);
 
   const changePaymentHistory = (val) => {
-    setPaymentHistory(val);
+    setPaymentHistory(100 - val);
     let dict = {
         "credit_history_length": creditHistoryLength,
         "credit_owed": creditOwed,
@@ -40,19 +40,62 @@ export default function Explore() {
 
     axios.post("https://api.day-zero.xyz/credit", dict, { httpsAgent: agent })
     .then(response => {
-        console.log("GENIUS")
         setCreditScore(response.data.credit_percentile)
+        const timer = setTimeout(() => {
+            console.log('axios request')
+         }, 500)
+         return () => {
+             clearTimeout(timer)
+         }; 
     });
   }
 
   const changeCreditOwed = (val) => {
-    setCreditOwed(val);
-    setCreditScore(paymentHistory + creditOwed + creditHistoryLength)
+    setCreditOwed(100 - val);
+    let dict = {
+        "credit_history_length": creditHistoryLength,
+        "credit_owed": creditOwed,
+        "payment_history": paymentHistory
+    }
+
+    const agent = new https.Agent({  
+        rejectUnauthorized: false
+       });
+
+    axios.post("https://api.day-zero.xyz/credit", dict, { httpsAgent: agent })
+    .then(response => {
+        setCreditScore(response.data.credit_percentile)
+        const timer = setTimeout(() => {
+            console.log('axios request')
+         }, 500)
+         return () => {
+             clearTimeout(timer)
+            }; 
+    });
     }
 
     const changeCreditHistoryLength = (val) => {
         setCreditHistoryLength(val);
-        setCreditScore(paymentHistory + creditOwed + creditHistoryLength)
+        let dict = {
+            "credit_history_length": creditHistoryLength,
+            "credit_owed": creditOwed,
+            "payment_history": paymentHistory
+        }
+
+        const agent = new https.Agent({  
+            rejectUnauthorized: false
+           });
+    
+        axios.post("https://api.day-zero.xyz/credit", dict, { httpsAgent: agent })
+        .then(response => {
+            setCreditScore(response.data.credit_percentile)
+            const timer = setTimeout(() => {
+                console.log('axios request')
+             }, 500)
+             return () => {
+                 clearTimeout(timer)
+             }; 
+        });
     }
 
 
@@ -68,7 +111,7 @@ export default function Explore() {
 
         <div className = "text-center">
             <h2>
-                {creditScore === null ? "-" : creditScore} 
+                {creditScore === null ? "-" : creditScore} {creditScore === null ? null : "th percentile"}
             </h2>
         </div>
 
@@ -79,7 +122,7 @@ export default function Explore() {
         <Slider 
         className = "padding-top"
         defaultValue={0}
-        // onChange={ (e, val) => changePaymentHistory(val) }  
+        onChange={ (e, val) => changePaymentHistory(val) }  
         onDragStop={ (e) => changePaymentHistory(val)}
         // getAriaValueText={"Number of late payments"}
         valueLabelDisplay="on"
@@ -92,7 +135,7 @@ export default function Explore() {
         <div className = "padding-top">
         <Slider
         defaultValue={0}
-        // onChange={ (e, val) => changeCreditOwed(val) }  
+        onChange={ (e, val) => changeCreditOwed(val) }  
         onDragStop={ (e) => changeCreditOwed(e)}
         // getAriaValueText={"How much credit you owe"}
         valueLabelDisplay="on"
@@ -107,7 +150,7 @@ export default function Explore() {
         <Slider
         className = "padding-top"
                 defaultValue={0}
-                // onChange={ (e, val) => changeCreditHistoryLength(val) }  
+                onChange={ (e, val) => changeCreditHistoryLength(val) }  
                 onDragStop={ (e) => changeCreditHistoryLength(e)}
                 // getAriaValueText={"How long have you held your credit accounts"}
                 valueLabelDisplay="on"

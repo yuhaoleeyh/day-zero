@@ -45,10 +45,23 @@ import {
 import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
 import HorizontalTimeline from "react-horizontal-timeline";
 import { ArrowDownward } from "@material-ui/icons";
+import Paper from '@material-ui/core/Paper';
+import {
+  Chart,
+  PieSeries,
+  Title,
+} from '@devexpress/dx-react-chart-material-ui';
+import { Animation } from '@devexpress/dx-react-chart';
 
 
 const useStyles = makeStyles(styles);
 const VALUES = [ "2018-03-22", "2018-03-23" ]
+
+const data = [
+  { country: 'Stock', area: 10 },
+  { country: 'Bonds', area: 35 },
+  { country: 'Cash', area: 55 },
+];
 
 export default function Dashboard() {
   const [value, setValue] = useState(0);
@@ -63,7 +76,11 @@ export default function Dashboard() {
             }}
             values={ VALUES } /> */}
             <Typography id="discrete-slider-custom" className = "text-center" gutterBottom>
-              <b>Your financial life journey</b>
+              <h4>
+                <b>
+                  Your financial life journey
+                </b>
+              </h4>
             </Typography>
             <Slider
               defaultValue={Math.floor(Math.random() * 100)}
@@ -163,8 +180,25 @@ export default function Dashboard() {
                 <AccessTime /> campaign sent 2 days ago
               </div>
             </CardFooter>
+            {/* <Paper>
+        <Chart
+          data={data}
+        >
+          <PieSeries
+            valueField="area"
+            argumentField="country"
+          />
+          <Title
+            text="Asset allocation"
+          />
+          <Animation />
+        </Chart>
+      </Paper>
           </Card>
-        </GridItem>
+        </GridItem> */}
+          </Card>
+          </GridItem>
+
       </GridContainer>
       <GridContainer>
         <GridItem xs={12} sm={6} md={3}>
@@ -184,7 +218,7 @@ export default function Dashboard() {
                   <Warning />
                 </Danger>
                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                  Net gains
+                  Net gains: Returns > Inflation Rate
                 </a>
               </div>
             </CardFooter>
@@ -213,13 +247,13 @@ export default function Dashboard() {
               <CardIcon color="danger">
                 <Icon>info_outline</Icon>
               </CardIcon>
-              <p className={classes.cardCategory}>Fixed Issues</p>
-              <h3 className={classes.cardTitle}>75</h3>
+              <p className={classes.cardCategory}>FI Ratio</p>
+              <h3 className={classes.cardTitle}>49</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
                 <LocalOffer />
-                Tracked from Github
+                Passive Income divided by Expenses
               </div>
             </CardFooter>
           </Card>
