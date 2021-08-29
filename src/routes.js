@@ -44,6 +44,7 @@ import Referral from "views/Referral/Referral"
 import Trophy from "views/Trophy/Trophy"
 import Regular from "pages/Regular";
 import RegularForm from "mycomponents/RegularForm";
+import News from "views/News/News";
 
 
 const dashboardRoutes = [
@@ -67,7 +68,7 @@ const dashboardRoutes = [
     path: "/investments",
     name: "Investments",
     rtlName: "لوحة القيادة",
-    icon: QuestionAnswerIcon,
+    icon: Language,
     component: Investments,
     layout: "/admin",
   },
@@ -75,7 +76,7 @@ const dashboardRoutes = [
     path: "/insurance",
     name: "Insurance",
     rtlName: "لوحة القيادة",
-    icon: QuestionAnswerIcon,
+    icon: LibraryBooks,
     component: Insurance,
     layout: "/admin",
   },
@@ -83,7 +84,7 @@ const dashboardRoutes = [
     path: "/referral",
     name: "Referral",
     rtlName: "طباعة",
-    icon: LibraryBooks,
+    icon: LocationOn,
     component: Referral,
     layout: "/admin",
   },
@@ -91,7 +92,7 @@ const dashboardRoutes = [
     path: "/trophy",
     name: "Achievements",
     rtlName: "طباعة",
-    icon: LibraryBooks,
+    icon: Language,
     component: Trophy,
     layout: "/admin",
   },
@@ -165,6 +166,15 @@ const dashboardRoutes = [
     rtlName: "التطور للاحترافية",
     icon: Unarchive,
     component: RegularForm,
+    layout: "/admin",
+  },
+
+  {
+    path: "/news",
+    name: "News",
+    rtlName: "التطور للاحترافية",
+    icon: Notifications,
+    component: News,
     layout: "/admin",
   },
   

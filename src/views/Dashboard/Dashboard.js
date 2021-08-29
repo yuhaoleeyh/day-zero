@@ -97,11 +97,12 @@ export default function Dashboard() {
               </h4>
             </Typography>
             Safer assets (Bonds)
-            {/* <span className = "text-right">
+            <span className = "text-right">
               Riskier assets (Stocks)
-            </span> */}
+            </span>
+            <div>
             <Slider
-              defaultValue={23}
+              defaultValue={30}
               // aria-labelledby="discrete-slider-small-steps"
               getAriaValueText={valuetext}
               step={2}
@@ -109,9 +110,10 @@ export default function Dashboard() {
               max={100}
               valueLabelDisplay="auto"
               aria-labelledby="discrete-slider-custom"
-              disabled
+              // disabled
               
             />
+            </div>
             {/* Riskier assetsfffffffffff (Stocks) */}
         </div>
         <div className = "text-center">
@@ -258,7 +260,7 @@ export default function Dashboard() {
               <CardIcon color="success">
                 <Store />
               </CardIcon>
-              <p className={classes.cardCategory}>Revenue over past 2 weeks</p>
+              <p className={classes.cardCategory}>Passive Income over past 2 weeks</p>
               <h3 className={classes.cardTitle}>$103</h3>
             </CardHeader>
             <CardFooter stats>
@@ -281,7 +283,7 @@ export default function Dashboard() {
             <CardFooter stats>
               <div className={classes.stats}>
                 <LocalOffer />
-                Passive Income divided by Expenses
+                Net Worth divided by FI Number
               </div>
             </CardFooter>
           </Card>
@@ -292,7 +294,7 @@ export default function Dashboard() {
               <CardIcon color="info">
                 <Accessibility />
               </CardIcon>
-              <p className={classes.cardCategory}>Long Term Net Worth</p>
+              <p className={classes.cardCategory}>Net Worth</p>
               <h3 className={classes.cardTitle}>$197,084</h3>
             </CardHeader>
             <CardFooter stats>
