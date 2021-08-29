@@ -16,11 +16,10 @@ function Landing() {
                     </p>
                     <Spacer space="10"/>
                     <div>
-                        <Link class="button" to="/regular">Sign Up</Link>
-                        <Link class="button" to="/regular">Sign In</Link>
+                        <Link class="buttonx" to="/regular">Sign In</Link>
                     </div>
                     <div>
-                        <ButtonBig name="Hackathon Login Bypass" linkTo="onboarding"/>
+                        <ButtonBig name="Let's begin!" linkTo="onboarding"/>
                     </div>
                 </div>
             </div>

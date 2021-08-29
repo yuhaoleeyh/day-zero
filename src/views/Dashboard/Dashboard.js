@@ -33,9 +33,6 @@ import { bugs, website, server, investments, loans, insurance } from "variables/
 import Slider from '@material-ui/core/Slider';
 import Typography from '@material-ui/core/Typography';
 import './Dashboard.css';
-
-
-
 import {
   dailySalesChart,
   emailsSubscriptionChart,

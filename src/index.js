@@ -27,6 +27,8 @@ import SuccessfulReferral from "layouts/Successful.js";
 import Landing from "./pages/Landing.js";
 import Regular from  "./pages/Regular.js";
 import Recommendation from  "./pages/Recommendation.js";
+import SuccessfulInsurance from "layouts/SuccessfulInsurance.js";
+
 
 
 import "assets/css/material-dashboard-react.css?v=1.10.0";
@@ -53,6 +55,7 @@ ReactDOM.render(
       <Route exact path="/onboarding" component={Questions} />
       <Route exact path="/regular" component={Regular} />
       <Route exact path="/recommendation" component={Recommendation} />
+      <Route exact path="/successfulrecommendation" component={SuccessfulInsurance} />
     </Switch>
   </HashRouter>,
   document.getElementById("root")

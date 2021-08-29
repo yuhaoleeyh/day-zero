@@ -42,6 +42,7 @@ import Insurance from "views/Insurance/Insurance";
 import Investments from "views/Investments/Investments";
 import Referral from "views/Referral/Referral"
 import Trophy from "views/Trophy/Trophy"
+import Regular from "pages/Regular";
 
 const dashboardRoutes = [
   {
@@ -157,11 +158,11 @@ const dashboardRoutes = [
   //   layout: "/rtl",
   // },
   {
-    path: "/upgrade-to-pro",
+    path: "/regular",
     name: "Make a lifetime update",
     rtlName: "التطور للاحترافية",
     icon: Unarchive,
-    component: UpgradeToPro,
+    component: Regular,
     layout: "/admin",
   },
   

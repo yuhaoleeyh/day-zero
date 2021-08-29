@@ -32,78 +32,109 @@ import CardFooter from "components/Card/CardFooter.js";
 import { bugs, website, server, investments, loans, insurance } from "variables/general.js";
 import Slider from '@material-ui/core/Slider';
 import Typography from '@material-ui/core/Typography';
+import Button from "components/CustomButtons/Button.js";
 
-const styles = {
-  cardCategoryWhite: {
-    "&,& a,& a:hover,& a:focus": {
-      color: "rgba(255,255,255,.62)",
-      margin: "0",
-      fontSize: "14px",
-      marginTop: "0",
-      marginBottom: "0",
-    },
-    "& a,& a:hover,& a:focus": {
-      color: "#FFFFFF",
-    },
-  },
-  cardTitleWhite: {
-    color: "#FFFFFF",
-    marginTop: "0px",
-    minHeight: "auto",
-    fontWeight: "300",
-    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-    marginBottom: "3px",
-    textDecoration: "none",
-    "& small": {
-      color: "#777",
-      fontSize: "65%",
-      fontWeight: "400",
-      lineHeight: "1",
-    },
-  },
-  tableUpgradeWrapper: {
-    display: "block",
-    width: "100%",
-    overflowX: "auto",
-    WebkitOverflowScrolling: "touch",
-    MsOverflowStyle: "-ms-autohiding-scrollbar",
-  },
-  table: {
-    width: "100%",
-    maxWidth: "100%",
-    marginBottom: "1rem",
-    backgroundColor: "transparent",
-    borderCollapse: "collapse",
-    display: "table",
-    borderSpacing: "2px",
-    borderColor: "grey",
-    "& thdead tr th": {
-      fontSize: "1.063rem",
-      padding: "12px 8px",
-      verticalAlign: "middle",
-      fontWeight: "300",
-      borderTopWidth: "0",
-      borderBottom: "1px solid rgba(0, 0, 0, 0.06)",
-      textAlign: "inherit",
-    },
-    "& tbody tr td": {
-      padding: "12px 8px",
-      verticalAlign: "middle",
-      borderTop: "1px solid rgba(0, 0, 0, 0.06)",
-    },
-    "& td, & th": {
-      display: "table-cell",
-    },
-  },
-  center: {
-    textAlign: "center",
-  },
-};
+import "./insurance.css";
+
+// const styles = {
+//   cardCategoryWhite: {
+//     "&,& a,& a:hover,& a:focus": {
+//       color: "rgba(255,255,255,.62)",
+//       margin: "0",
+//       fontSize: "14px",
+//       marginTop: "0",
+//       marginBottom: "0",
+//     },
+//     "& a,& a:hover,& a:focus": {
+//       color: "#FFFFFF",
+//     },
+//   },
+//   cardTitleWhite: {
+//     color: "#FFFFFF",
+//     marginTop: "0px",
+//     minHeight: "auto",
+//     fontWeight: "300",
+//     fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
+//     marginBottom: "3px",
+//     textDecoration: "none",
+//     "& small": {
+//       color: "#777",
+//       fontSize: "65%",
+//       fontWeight: "400",
+//       lineHeight: "1",
+//     },
+//   },
+//   tableUpgradeWrapper: {
+//     display: "block",
+//     width: "100%",
+//     overflowX: "auto",
+//     WebkitOverflowScrolling: "touch",
+//     MsOverflowStyle: "-ms-autohiding-scrollbar",
+//   },
+//   table: {
+//     width: "100%",
+//     maxWidth: "100%",
+//     marginBottom: "1rem",
+//     backgroundColor: "transparent",
+//     borderCollapse: "collapse",
+//     display: "table",
+//     borderSpacing: "2px",
+//     borderColor: "grey",
+//     "& thdead tr th": {
+//       fontSize: "1.063rem",
+//       padding: "12px 8px",
+//       verticalAlign: "middle",
+//       fontWeight: "300",
+//       borderTopWidth: "0",
+//       borderBottom: "1px solid rgba(0, 0, 0, 0.06)",
+//       textAlign: "inherit",
+//     },
+//     "& tbody tr td": {
+//       padding: "12px 8px",
+//       verticalAlign: "middle",
+//       borderTop: "1px solid rgba(0, 0, 0, 0.06)",
+//     },
+//     "& td, & th": {
+//       display: "table-cell",
+//     },
+//   },
+//   center: {
+//     textAlign: "center",
+//   },
+// };
+import {
+  dailySalesChart,
+  emailsSubscriptionChart,
+  completedTasksChart,
+} from "variables/charts.js";
+
+import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
+import HorizontalTimeline from "react-horizontal-timeline";
+import { ArrowDownward } from "@material-ui/icons";
+import Paper from '@material-ui/core/Paper';
+import {
+  Chart,
+  PieSeries,
+  Title,
+} from '@devexpress/dx-react-chart-material-ui';
+import { Animation } from '@devexpress/dx-react-chart';
+import { useHistory } from "react-router-dom";
+
 
 const useStyles = makeStyles(styles);
 
 export default function Insurance() {
   const classes = useStyles();
+
+  const history = useHistory();
+
+
+const handleSubmit = (e) => {
+    e.preventDefault();
+      let path = '/successfulrecommendation'
+      history.push(path)
+
+}
   return (
     <div>
     <GridContainer justify="center">
@@ -120,19 +151,15 @@ export default function Insurance() {
         </Card>
       </GridItem>
     </GridContainer>
-
-    <GridContainer>
+      <GridContainer>
         <GridItem xs={12} sm={6} md={3}>
           <Card>
             <CardHeader color="warning" stats icon>
               <CardIcon color="warning">
                 <Icon>content_copy</Icon>
               </CardIcon>
-              Tewr
-              <p className={classes.cardCategory}>Inflation Rate</p>
-              <h3 className={classes.cardTitle}>
-                1.2 <small>%</small>
-              </h3>
+              <p className={classes.cardCategory}>Life Insurance</p>
+              
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
@@ -140,7 +167,8 @@ export default function Insurance() {
                   <Warning />
                 </Danger>
                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                  Net gains: Returns > Inflation Rate
+                <ol className={[classes.cardTitle, "text-left"].join(' ')}>Protection against unexpected death </ol>
+              <ol className={[classes.cardTitle, "text-left"].join(' ')}>Protection against total permenant disability</ol>
                 </a>
               </div>
             </CardFooter>
@@ -152,13 +180,14 @@ export default function Insurance() {
               <CardIcon color="success">
                 <Store />
               </CardIcon>
-              <p className={classes.cardCategory}>Revenue over past 7 days</p>
-              <h3 className={classes.cardTitle}>$103</h3>
+              <p className={classes.cardCategory}>Health Insurance</p>
+              
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
                 <DateRange />
-                Last 24 Hours
+                <ol className={[classes.cardTitle, "text-left"].join(' ')}>Coverage for better wards across hospitals </ol>
+              <ol className={[classes.cardTitle, "text-left"].join(' ')}>Availability of riders</ol>
               </div>
             </CardFooter>
           </Card>
@@ -169,13 +198,13 @@ export default function Insurance() {
               <CardIcon color="danger">
                 <Icon>info_outline</Icon>
               </CardIcon>
-              <p className={classes.cardCategory}>Financial Independence Ratio</p>
-              <h3 className={classes.cardTitle}>49</h3>
+              <p className={classes.cardCategory}>Critical illness</p>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
                 <LocalOffer />
-                Passive Income divided by Expenses
+                <ol className={[classes.cardTitle, "text-left"].join(' ')}>Lump sum payout for serious illness </ol>
+                <ol className={[classes.cardTitle, "text-left"].join(' ')}>Depends on stage of illness</ol>
               </div>
             </CardFooter>
           </Card>
@@ -186,18 +215,21 @@ export default function Insurance() {
               <CardIcon color="info">
                 <Accessibility />
               </CardIcon>
-              <p className={classes.cardCategory}>Followers</p>
-              <h3 className={classes.cardTitle}>+245</h3>
+              <p className={classes.cardCategory}>Personal Accident</p>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
                 <Update />
-                Just Updated
+                <ol className={[classes.cardTitle, "text-left"].join(' ')}>Payout for Personal Accidents </ol>
+              <ol className={[classes.cardTitle, "text-left"].join(' ')}>Useful for non-health related problems</ol>
               </div>
             </CardFooter>
           </Card>
         </GridItem>
       </GridContainer>
+      <div className = "text-center">
+      <Button color="primary" onClick = {handleSubmit} >Recommend me a suitable plan!</Button>
+      </div>
     
     </div>
   );
