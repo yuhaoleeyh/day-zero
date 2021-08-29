@@ -16,7 +16,7 @@ function Landing() {
                     </p>
                     <Spacer space="10"/>
                     <div>
-                        <Link class="buttonx" to="/regular">Sign In</Link>
+                        <Link class="buttonx" to="/regular">Skip onboarding</Link>
                     </div>
                     <div>
                         <ButtonBig name="Let's begin!" linkTo="onboarding"/>
