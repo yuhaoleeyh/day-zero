@@ -545,6 +545,8 @@ export default function Ticker() {
 
     const [stockData, setStockData] = useState(null);
 
+    const [fullData, setFullData] = useState([]);
+
     const handleStartDateChange = (e) => {
         const beginDate = moment(e).format('MM/DD/YYYY')
         console.log(e);
@@ -572,6 +574,7 @@ export default function Ticker() {
         e.preventDefault();
         axios.post("http://api.day-zero.xyz/stock", dict)
     .then(response => {
+        setFullData(response.data);
         console.log(response.data)
         console.log(response.data.pricing)
         console.log(response.data.pricing[0])
@@ -728,13 +731,16 @@ export default function Ticker() {
 
 
 <div className = "text-center">
-            <h2>Real time {textFieldValue} data for understanding!</h2>
+            <h2>Real time data for understanding!</h2>
         </div>
         <div className = "text-center">
         <h3>AI Advisor says: </h3>
         <div>
             <p>Generally upward trending price of stocks</p>
-            <p>7 day: Exponential moving Average: <b>$189.83</b></p>
+            <p>7 day: Exponential moving Average: <b>{}</b></p>
+            <p>The 1 year target estimate based on our projection is: {fullData === null ? "" : "$" + fullData["1y Target Est"]}</p>
+            <p>The price over earnings ratio is : {fullData === null ? "" :  fullData["PE Ratio (TTM)"]}</p>
+
             
             <p></p>
             <p>May want to start monitor the market for any sudden downturns, but overall the market is doing well.</p>
