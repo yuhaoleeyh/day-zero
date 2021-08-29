@@ -622,14 +622,22 @@ export default function Data() {
                 Click the explore button to view any stock you wish and see our tailored advisor how to observe trends.
             </p>
         </div>
+        <div className = "text-center">
+        <h3>AI Advisor says: </h3>
+        <div>
+            <p>Generally upward trending price of stocks</p>
+            <p>7 day: Exponential moving Average: <b>$189.83</b></p>
+            <p></p>
+            <p>May want to start monitor the market for any sudden downturns, but overall the market is doing well.</p>
+            <p><b>2.8</b> times the volume invested from start to end</p>
+        </div>
+    </div>
     <HighchartsReact
       highcharts={Highcharts}
       constructorType={"stockChart"}
       options={options}
     />
-    <div>
-        <p>Generally upward trending price of stocks</p>
-    </div>
+    
   </div>
   }
   

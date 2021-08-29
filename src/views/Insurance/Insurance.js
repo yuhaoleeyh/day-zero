@@ -105,6 +105,7 @@ const useStyles = makeStyles(styles);
 export default function Insurance() {
   const classes = useStyles();
   return (
+    <div>
     <GridContainer justify="center">
       <GridItem xs={12} sm={12} md={10}>
         <Card>
@@ -116,161 +117,88 @@ export default function Insurance() {
               A side-by-side comparison of the kinds of insurance, and recommendations to buy.
             </p>
           </CardHeader>
-          {/* <CardBody>
-            <div className={classes.tableUpgradeWrapper}>
-              <table className={classes.table}>
-                <thead>
-                  <tr>
-                    <th />
-                    <th className={classes.left}>Free</th>
-                    <th className={classes.center}>PRO</th>
-                    <th className={classes.right}>Free</th>
-                    <th className={classes.right}>PRO</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Components</td>
-                    <td className={classes.left}>30</td>
-                    <td className={classes.center}>200</td>
-                    <td className={classes.right}>30</td>
-                    <td className={classes.right}>200</td>
-                    
-                  </tr>
-                  <tr>
-                    <td>Plugins</td>
-                    <td className={classes.left}>2</td>
-                    <td className={classes.center}>10</td>
-                    <td className={classes.right}>2</td>
-                    <td className={classes.center}>10</td>
-                  </tr>
-                  <tr>
-                    <td>Example Pages</td>
-                    <td className={classes.left}>7</td>
-                    <td className={classes.center}>28</td>
-                    <td className={classes.center}>7</td>
-                    <td className={classes.center}>28</td>
-                  </tr>
-                  <tr>
-                    <td>Login, Register, Pricing, Lock Pages</td>
-                    <td className={classes.left}>
-                      <Danger>
-                        <Close />
-                      </Danger>
-                    </td>
-                    <td className={classes.center}>
-                      <Success>
-                        <Check />
-                      </Success>
-                    </td>
-                    <td className={classes.center}>
-                      <Danger>
-                        <Close />
-                      </Danger>
-                    </td>
-                    <td className={classes.center}>
-                      <Success>
-                        <Check />
-                      </Success>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      ReactTables, ReactVectorMap, ReactSweetAlert, Wizard,
-                      Validation, ReactBigCalendar etc...
-                    </td>
-                    <td className={classes.left}>
-                      <Danger>
-                        <Close />
-                      </Danger>
-                    </td>
-                    <td className={classes.center}>
-                      <Success>
-                        <Check />
-                      </Success>
-                    </td>
-                    <td className={classes.center}>
-                      <Danger>
-                        <Close />
-                      </Danger>
-                    </td>
-                    <td className={classes.center}>
-                      <Success>
-                        <Check />
-                      </Success>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Mini Sidebar</td>
-                    <td className={classes.left}>
-                      <Danger>
-                        <Close />
-                      </Danger>
-                    </td>
-                    <td className={classes.center}>
-                      <Success>
-                        <Check />
-                      </Success>
-                    </td>
-                    <td className={classes.center}>
-                      <Danger>
-                        <Close />
-                      </Danger>
-                    </td>
-                    <td className={classes.center}>
-                      <Success>
-                        <Check />
-                      </Success>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Premium Support</td>
-                    <td className={classes.left}>
-                      <Danger>
-                        <Close />
-                      </Danger>
-                    </td>
-                    <td className={classes.center}>
-                      <Success>
-                        <Check />
-                      </Success>
-                    </td>
-                    <td className={classes.center}>
-                      <Danger>
-                        <Close />
-                      </Danger>
-                    </td>
-                    <td className={classes.center}>
-                      <Success>
-                        <Check />
-                      </Success>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td />
-                    <td className={classes.left}>Free</td>
-                    <td className={classes.center}>Just $59</td>
-                    <td className={classes.center}>Free</td>
-                    <td className={classes.center}>Just $59</td>
-                  </tr>
-                  <tr>
-                    <td />
-                    <td className={classes.center}>
-                      <Button
-                        round
-                        color="danger"
-                        href="https://www.creative-tim.com/product/material-dashboard-pro-react?ref=mdr-upgrade-live"
-                      >
-                        I am interested to be recommended!
-                      </Button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </CardBody> */}
         </Card>
       </GridItem>
     </GridContainer>
+
+    <GridContainer>
+        <GridItem xs={12} sm={6} md={3}>
+          <Card>
+            <CardHeader color="warning" stats icon>
+              <CardIcon color="warning">
+                <Icon>content_copy</Icon>
+              </CardIcon>
+              Tewr
+              <p className={classes.cardCategory}>Inflation Rate</p>
+              <h3 className={classes.cardTitle}>
+                1.2 <small>%</small>
+              </h3>
+            </CardHeader>
+            <CardFooter stats>
+              <div className={classes.stats}>
+                <Danger>
+                  <Warning />
+                </Danger>
+                <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                  Net gains: Returns > Inflation Rate
+                </a>
+              </div>
+            </CardFooter>
+          </Card>
+        </GridItem>
+        <GridItem xs={12} sm={6} md={3}>
+          <Card>
+            <CardHeader color="success" stats icon>
+              <CardIcon color="success">
+                <Store />
+              </CardIcon>
+              <p className={classes.cardCategory}>Revenue over past 7 days</p>
+              <h3 className={classes.cardTitle}>$103</h3>
+            </CardHeader>
+            <CardFooter stats>
+              <div className={classes.stats}>
+                <DateRange />
+                Last 24 Hours
+              </div>
+            </CardFooter>
+          </Card>
+        </GridItem>
+        <GridItem xs={12} sm={6} md={3}>
+          <Card>
+            <CardHeader color="danger" stats icon>
+              <CardIcon color="danger">
+                <Icon>info_outline</Icon>
+              </CardIcon>
+              <p className={classes.cardCategory}>Financial Independence Ratio</p>
+              <h3 className={classes.cardTitle}>49</h3>
+            </CardHeader>
+            <CardFooter stats>
+              <div className={classes.stats}>
+                <LocalOffer />
+                Passive Income divided by Expenses
+              </div>
+            </CardFooter>
+          </Card>
+        </GridItem>
+        <GridItem xs={12} sm={6} md={3}>
+          <Card>
+            <CardHeader color="info" stats icon>
+              <CardIcon color="info">
+                <Accessibility />
+              </CardIcon>
+              <p className={classes.cardCategory}>Followers</p>
+              <h3 className={classes.cardTitle}>+245</h3>
+            </CardHeader>
+            <CardFooter stats>
+              <div className={classes.stats}>
+                <Update />
+                Just Updated
+              </div>
+            </CardFooter>
+          </Card>
+        </GridItem>
+      </GridContainer>
+    
+    </div>
   );
 }

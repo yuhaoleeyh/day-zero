@@ -50,7 +50,7 @@ export default function TableList() {
           <CardHeader color="primary">
             <h4 className={classes.cardTitleWhite}>Achievements</h4>
             <p className={classes.cardCategoryWhite}>
-              Those who are on the path to finnacial independence and/or have referred others to the journey!
+              Those who are on the path to financial independence and/or have referred others to the journey!
             </p>
           </CardHeader>
           <CardBody>

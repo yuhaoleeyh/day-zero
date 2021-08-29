@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 import React from 'react';
 import Tasks from "components/Tasks/Tasks.js";
 import CustomTabs from "components/CustomTabs/CustomTabs.js";

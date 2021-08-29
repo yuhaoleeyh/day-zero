@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 import Spacer from './Spacer';
 import { useHistory } from "react-router-dom";
 
+
 const options = [
     [
         {
@@ -121,53 +122,66 @@ const options = [
 
 const questions = [
     "What's on your mind now?", 
-    "Which category is this under?"
+    "What are you doing?"
 ]
 
 function RegularForm(props) {
     const [isFirstQ, setIsFirstQ] = useState(true)
     const [firstIndex, setFirstIndex] = useState(0)
-    const [chosen, setChosen] = useState("0")
+    const [chosen, setChosen] = useState("-1")
+    const [isFilled, setIsFilled] = useState(false)
+
+    let history = useHistory();
 
     const firstSubmitHandler = () => {
         setIsFirstQ(false)
         setFirstIndex(chosen)
         setChosen("-1")
+        setIsFilled(false)
     }
-
-    let history = useHistory();
 
     const lastSubmitHandler = () => {
         const op = {
             id: options[firstIndex][chosen].key,
             item: options[firstIndex][chosen].item
         }
-
         history.push({
             pathname: '/recommendation',
             state: { op: op}
         });
     }
 
-    
+    // console.log("--")
+    // console.log("first index " + firstIndex)
+    // console.log("first index " + isFirstQ)
+    // console.log(options[0])
+    // options[0].map(hello => console.log(hello))
+
+    const changeOption = (e) => {
+        setChosen(e.target.value)
+        setIsFilled(true)
+    }
     
     return (
         <div className="regularform">
-            <div className="regularform-bluecard stack-top">
+            <div className="regularform-bluecard">
                 <h2>{isFirstQ ? questions[0] : questions[1]}</h2>
             </div>
             <div className="regularform-whitecard">
                 <Spacer space="35"/>
-                <RadioGroup value={chosen} onChange={(e) => setChosen(e.target.value)}>
+                <RadioGroup value={chosen} onChange={(e) => changeOption(e)}>
                     {options[firstIndex].map(option => (
                         <FormControlLabel value={option.id.toString()} control={<Radio color='primary'/>} label={option.item}/>
                     ))}
                 </RadioGroup>
-                {isFirstQ && (
+                {(isFirstQ && isFilled) && (
                     <button onClick={firstSubmitHandler}>Submit</button>
                 )}
-                {!isFirstQ && (
+                {(!isFirstQ && isFilled) && (
                     <button onClick={lastSubmitHandler}>Submit</button>
+                )}
+                {!isFilled && (
+                    <p>Please select one option to proceed</p>
                 )}
                 <Spacer space="5"/>
             </div>

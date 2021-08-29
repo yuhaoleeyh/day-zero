@@ -126,7 +126,7 @@ export default function Dashboard() {
             </CardBody>
             <CardFooter chart>
               <div className={classes.stats}>
-                <AccessTime /> updated 4 minutes ago
+                <AccessTime /> updated recently
               </div>
             </CardFooter>
           </Card>
@@ -154,7 +154,7 @@ export default function Dashboard() {
             </CardBody>
             <CardFooter chart>
               <div className={classes.stats}>
-                <AccessTime /> updated 4 minutes ago
+                <AccessTime /> updated recently
               </div>
             </CardFooter>
           </Card>
@@ -172,12 +172,18 @@ export default function Dashboard() {
               />
             </CardHeader>
             <CardBody>
-              <h4 className={classes.cardTitle}>Email Subscriptions</h4>
-              <p className={classes.cardCategory}>Last Campaign Performance</p>
+              <h4 className={classes.cardTitle}>Long-Term App Usage</h4>
+              <p className={classes.cardCategory}>
+                <span className={classes.successText}>
+                  <ArrowUpward className={classes.upArrowCardCategory} /> 6 hours
+                </span>{" "}
+                spent on average daily
+              </p>
+              <p>Time spent: APPROPRIATE </p>
             </CardBody>
             <CardFooter chart>
               <div className={classes.stats}>
-                <AccessTime /> campaign sent 2 days ago
+                <AccessTime /> updated recently
               </div>
             </CardFooter>
             {/* <Paper>
@@ -207,7 +213,7 @@ export default function Dashboard() {
               <CardIcon color="warning">
                 <Icon>content_copy</Icon>
               </CardIcon>
-              <p className={classes.cardCategory}>Inflation Rate</p>
+              <p className={classes.cardCategory}>Personal Inflation Rate</p>
               <h3 className={classes.cardTitle}>
                 1.2 <small>%</small>
               </h3>
@@ -230,13 +236,13 @@ export default function Dashboard() {
               <CardIcon color="success">
                 <Store />
               </CardIcon>
-              <p className={classes.cardCategory}>Revenue</p>
+              <p className={classes.cardCategory}>Revenue over past 2 weeks</p>
               <h3 className={classes.cardTitle}>$103</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
                 <DateRange />
-                Last 24 Hours
+                From your financial activity
               </div>
             </CardFooter>
           </Card>
@@ -247,8 +253,8 @@ export default function Dashboard() {
               <CardIcon color="danger">
                 <Icon>info_outline</Icon>
               </CardIcon>
-              <p className={classes.cardCategory}>FI Ratio</p>
-              <h3 className={classes.cardTitle}>49</h3>
+              <p className={classes.cardCategory}>Financial Independence Ratio</p>
+              <h3 className={classes.cardTitle}>0.49</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
@@ -264,13 +270,13 @@ export default function Dashboard() {
               <CardIcon color="info">
                 <Accessibility />
               </CardIcon>
-              <p className={classes.cardCategory}>Followers</p>
-              <h3 className={classes.cardTitle}>+245</h3>
+              <p className={classes.cardCategory}>Long Term Net Worth</p>
+              <h3 className={classes.cardTitle}>$197,084</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
                 <Update />
-                Just Updated
+                Total Assets - Total Liabilities
               </div>
             </CardFooter>
           </Card>

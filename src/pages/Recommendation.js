@@ -1,13 +1,10 @@
 import React from 'react'
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import Footer from '../mycomponents/Footer';
 import Header from '../mycomponents/Header';
 import Card from '../mycomponents/Card'
 import "./Recommendation.css"
-import { useLocation, useHistory } from "react-router-dom";
-import Button from "components/CustomButtons/Button.js";
-
-
+import Spacer from '../mycomponents/Spacer';
 
 const recommendations = [
     {
@@ -104,21 +101,19 @@ const recommendations = [
 ]
 
 function Recommendation(props) {
-    const history = useHistory();
-
-    const location = useLocation();
-    // console.log(props.location.state.op)
-    // const issue = props.location.state.op
-    const issue = location.state.op;
+    console.log(props.location.state.op)
+    const issue = props.location.state.op
     let loanR = "h1"
     let insureR = "h2"
     let investR = "h3"
 
-    const handleSubmit = () => {
-        let path = '/admin/dashboard'
-        history.push(path)
-    }
-
+    // for (let recommendation in recommendations) {
+    //     console.log(recommendation)
+    //     if (recommendation.id === issue.id) {
+    //         console.log("oi")
+            
+    //     }
+    // }
 
     const allocate = (element) => {
         if (element.id === issue.id) {
@@ -133,16 +128,14 @@ function Recommendation(props) {
     return (
         <div className="recommendation">
             <Header />
-            <div className="recommendation-cards">
-                <Card title="Loan" suggestion={loanR}/>
-                <Card title="Insure" suggestion={insureR}/>
-                <Card title="Invest" suggestion={investR}/>
-                <div>
-                    <Button color="primary" onClick = {handleSubmit} >Let's begin!</Button>
+            <div className="recommendation-bigbox">
+                <Spacer space="40" />
+                <div className="recommendation-cards">
+                    <Card title="Loan" suggestion={loanR}/>
+                    <Card title="Insure" suggestion={insureR}/>
+                    <Card title="Invest" suggestion={investR}/>
                 </div>
-            </div>
-            <div>
-                <Button color="primary" onClick = {handleSubmit} >Let's begin!</Button>
+                <Link class="button" to="/admin/dashboard">Back to Dashboard</Link>
             </div>
             <Footer />
         </div>
