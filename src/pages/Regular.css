@@ -1,0 +1,22 @@
+.regular {
+    background-color: #eeeeee;
+    background-size: cover;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.regular-intro {
+    width: 100vw;
+    background-image: url(../mystatic/welcomebanner.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    padding: 13vh;
+    position:fixed;
+    top: 8vh;
+}

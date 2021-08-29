@@ -1,0 +1,16 @@
+.header {
+    background-color: #081338;
+    width: 100vw;
+    min-height: 8vh;
+    position:fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header h2 {
+    margin: 0 20px;
+    font-family:'Times New Roman', Times, serif;
+    color: white;
+}

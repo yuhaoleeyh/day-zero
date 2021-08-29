@@ -24,6 +24,10 @@ import Admin from "layouts/Admin.js";
 import RTL from "layouts/RTL.js";
 import Questions from "layouts/Questions.js";
 import SuccessfulReferral from "layouts/Successful.js";
+import Landing from "./pages/Landing.js";
+import Regular from  "./pages/Regular.js";
+import Recommendation from  "./pages/Recommendation.js";
+
 
 import "assets/css/material-dashboard-react.css?v=1.10.0";
 
@@ -44,7 +48,11 @@ ReactDOM.render(
       <Route path="/admin" component={Admin} />
       <Route path="/rtl" component={RTL} />
       <Route exact path = "/successfulreferral/hello" component = {SuccessfulReferral}/>
-      <Route exact path="/" component={Questions} />
+      {/* <Route exact path="/" component={Questions} /> */}
+      <Route exact path="/" component={Landing} />
+      <Route exact path="/onboarding" component={Questions} />
+      <Route exact path="/regular" component={Regular} />
+      <Route exact path="/recommendation" component={Recommendation} />
     </Switch>
   </HashRouter>,
   document.getElementById("root")

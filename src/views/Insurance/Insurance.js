@@ -116,7 +116,7 @@ export default function Insurance() {
               A side-by-side comparison of the kinds of insurance, and recommendations to buy.
             </p>
           </CardHeader>
-          <CardBody>
+          {/* <CardBody>
             <div className={classes.tableUpgradeWrapper}>
               <table className={classes.table}>
                 <thead>
@@ -268,7 +268,7 @@ export default function Insurance() {
                 </tbody>
               </table>
             </div>
-          </CardBody>
+          </CardBody> */}
         </Card>
       </GridItem>
     </GridContainer>

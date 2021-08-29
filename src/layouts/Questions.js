@@ -53,7 +53,7 @@ export default function Question() {
   }
 
   const handleSubmit = (e) => {
-    let path = '/admin'
+    let path = '/regular'
     history.push(path)
 
   }

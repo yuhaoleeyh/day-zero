@@ -1,0 +1,55 @@
+.regularform {
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-size:larger;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border-style: solid;
+    border-width: 1.5px;
+    border-color: red; */
+}
+
+.regularform-bluecard {
+    width: 50vw;
+    background-color: #081338;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+.regularform-whitecard {
+    width: 47vw;
+    background-color:white;
+    color: black;
+    padding-left: 60px;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    position: relative;
+    top: -6vh;
+}
+
+.regularform button {
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: black;
+    color: black;
+    background-color: transparent;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 20px 0px;
+    cursor: pointer;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.stack-top {
+    z-index: 9;
+}

@@ -26,6 +26,7 @@
     "react-dom": "^16.13.0",
     "react-highcharts": "^16.1.0",
     "react-horizontal-timeline": "^1.5.3",
+    "react-icons": "^4.2.0",
     "react-router-dom": "5.2.0",
     "react-scripts": "4.0.3",
     "react-swipeable-views": "0.13.9",
@@ -73,6 +74,7 @@
       "not op_mini all"
     ],
     "development": [],
-    "awsdeploy": "aws s3 sync build/ s3://etsh-react-app"
+    "awsdeploy": "aws s3 sync build/ s3://day-zero.xyz"
+    
   }
 }

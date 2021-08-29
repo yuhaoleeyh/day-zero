@@ -157,10 +157,6 @@ export default function Explore() {
                 />
 
 </div>
-
-        <div>{paymentHistory}</div>
-        <div>{creditOwed}</div>
-        <div>{creditHistoryLength}</div>
       
       </div>
 }
