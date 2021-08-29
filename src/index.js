@@ -17,7 +17,7 @@
 */
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { HashRouter, BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 // core components
 import Admin from "layouts/Admin.js";
@@ -28,16 +28,24 @@ import SuccessfulReferral from "layouts/Successful.js";
 import "assets/css/material-dashboard-react.css?v=1.10.0";
 
 ReactDOM.render(
-  <BrowserRouter>
+  // <HashRouter>
+  //   <Switch>
+  //     <Route path="/admin" component={Admin} />
+  //     <Route path="/rtl" component={RTL} />
+  //     <Route path="/material-dashboard-react" component={Questions} />
+  //     <Route exact path = "/successfulreferral/hello" component = {SuccessfulReferral}/>
+  //     {/* <Redirect from="/hello" to="/admin/dashboard" /> */}
+  //     {/* <Redirect from="/material-dashboard-react" to="/" /> */}
+
+  //   </Switch>
+  // </HashRouter>,
+  <HashRouter>
     <Switch>
       <Route path="/admin" component={Admin} />
       <Route path="/rtl" component={RTL} />
-      <Route exact path="/material-dashboard-react" component={Questions} />
       <Route exact path = "/successfulreferral/hello" component = {SuccessfulReferral}/>
-      {/* <Redirect from="/hello" to="/admin/dashboard" /> */}
-      {/* <Redirect from="/material-dashboard-react" to="/" /> */}
-
+      <Route exact path="/" component={Questions} />
     </Switch>
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById("root")
 );
