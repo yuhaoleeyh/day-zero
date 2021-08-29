@@ -49,7 +49,7 @@ export default function Questions() {
       <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
         <Card>
-          <CardHeader color="primary">
+          <CardHeader color="success">
             <h4 className={classes.cardTitleWhite}>Achievements</h4>
             <p className={classes.cardCategoryWhite}>
               Those who are on the path to financial independence and/or have referred others to the journey!
@@ -57,7 +57,7 @@ export default function Questions() {
           </CardHeader>
           <CardBody>
             <Table
-              tableHeaderColor="primary"
+              tableHeaderColor="success"
               tableHead={["Name", "Country", "City", "Points"]}
               tableData={[
                 ["Dakota Rice", "Niger", "Oud-Turnhout", "106,738"],

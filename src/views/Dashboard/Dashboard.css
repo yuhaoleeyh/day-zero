@@ -32,3 +32,11 @@
 .Component-root-128 {
     height: 250px !important;
 }
+
+
+.text-right {
+    text-align: right;
+    left: 10em;
+    bottom: 3em;
+    padding-left: 31em;
+}

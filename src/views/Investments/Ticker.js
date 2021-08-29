@@ -608,10 +608,6 @@ export default function Ticker() {
             
         ]);
       
-
-        console.log(response.data.pricing[i][0]);
-        console.log(response.data.pricing[i][1]);
-        console.log(response.data.pricing[i][2]);
         volume.push([
             response.data.pricing[i][0] * 1000, // the date
             response.data.pricing[i][5] // the volume
@@ -723,12 +719,42 @@ export default function Ticker() {
     </MuiPickersUtilsProvider>
     <Button className = "primary" onClick = {handleSubmit}>Submit</Button>
             </form>
-        </div>{stockData === null ? null : <HighchartsReact
+            
+        </div>
+        <div>
+        {
+        stockData === null ? null : 
+        <div>
+
+
+<div className = "text-center">
+            <h2>Real time {textFieldValue} data for understanding!</h2>
+        </div>
+        <div className = "text-center">
+        <h3>AI Advisor says: </h3>
+        <div>
+            <p>Generally upward trending price of stocks</p>
+            <p>7 day: Exponential moving Average: <b>$189.83</b></p>
+            
+            <p></p>
+            <p>May want to start monitor the market for any sudden downturns, but overall the market is doing well.</p>
+            <p><b>2.8</b> times the volume invested from start to end</p>
+        </div>
+    </div>
+        <HighchartsReact
       highcharts={Highcharts}
       constructorType={"stockChart"}
       options={stockData}
-    />}
+    />
+
+
+
+    </div>}
+
+    </div>
     
   </div>
   }
   
+
+

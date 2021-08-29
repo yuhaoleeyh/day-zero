@@ -140,7 +140,7 @@ const handleSubmit = (e) => {
     <GridContainer justify="center">
       <GridItem xs={12} sm={12} md={10}>
         <Card>
-          <CardHeader color="info">
+          <CardHeader color="success" className = "blue-colour">
             <h4 className={classes.cardTitleWhite}>
               Insurance
             </h4>
@@ -228,7 +228,7 @@ const handleSubmit = (e) => {
         </GridItem>
       </GridContainer>
       <div className = "text-center">
-      <Button color="primary" onClick = {handleSubmit} >Recommend me a suitable plan!</Button>
+      <Button color="success" onClick = {handleSubmit} >Recommend me a suitable plan!</Button>
       </div>
     
     </div>

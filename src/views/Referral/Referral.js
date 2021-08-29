@@ -62,7 +62,7 @@ export default function Referral() {
         <GridItem xs = {1} sm = {1} md = {1} />
         <GridItem xs={12} sm={12} md={10}>
           <Card>
-            <CardHeader color="primary">
+            <CardHeader color="success">
               <h4 className={classes.cardTitleWhite}>Refer your friend</h4>
               <p className={classes.cardCategoryWhite}>Include others in this long-term financial journey</p>
             </CardHeader>
@@ -104,7 +104,7 @@ export default function Referral() {
               </GridContainer>
             </CardBody>
             <CardFooter>
-              <Button color="primary" onClick = {handleSubmit} >Recommend DayZero!</Button>
+              <Button color="success" onClick = {handleSubmit} >Recommend DayZero!</Button>
             </CardFooter>
           </Card>
         </GridItem>

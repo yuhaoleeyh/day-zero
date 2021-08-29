@@ -64,7 +64,7 @@ export default function Question() {
         <GridItem xs = {1} sm = {1} md = {1} />
         <GridItem xs={12} sm={12} md={10}>
           <Card>
-            <CardHeader color="primary">
+            <CardHeader color="success">
               <h4 className={classes.cardTitleWhite}>Day Zero</h4>
               <p className={classes.cardCategoryWhite}>Start your financial journey</p>
             </CardHeader>
@@ -79,7 +79,7 @@ export default function Question() {
                   />
                 </GridItem>
                 <GridItem xs={12} sm={12} md={1}>
-                  <CustomInput
+                  <fRCustomInput
                     labelText="Age"
                     id="username"
                     formControlProps={{
@@ -174,7 +174,7 @@ export default function Question() {
               </GridContainer>
             </CardBody>
             <CardFooter>
-              <Button color="primary" onClick = {handleSubmit} >Start from DayZero!</Button>
+              <Button color="success" onClick = {handleSubmit} >Start from DayZero!</Button>
             </CardFooter>
           </Card>
         </GridItem>

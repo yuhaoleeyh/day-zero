@@ -43,6 +43,8 @@ import Investments from "views/Investments/Investments";
 import Referral from "views/Referral/Referral"
 import Trophy from "views/Trophy/Trophy"
 import Regular from "pages/Regular";
+import RegularForm from "mycomponents/RegularForm";
+
 
 const dashboardRoutes = [
   {
@@ -162,7 +164,7 @@ const dashboardRoutes = [
     name: "Make a lifetime update",
     rtlName: "التطور للاحترافية",
     icon: Unarchive,
-    component: Regular,
+    component: RegularForm,
     layout: "/admin",
   },
   

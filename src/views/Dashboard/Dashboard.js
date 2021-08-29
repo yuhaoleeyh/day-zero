@@ -60,6 +60,23 @@ const data = [
   { country: 'Cash', area: 55 },
 ];
 
+const marks = [
+  {
+    value: 0,
+    label: 'Safer Assets (Bonds)',
+  },
+  {
+    value: 100,
+    label: 'Riskier Assets (Stocks)',
+  },
+];
+
+function valuetext(value) {
+  return `${value}`;
+}
+
+
+
 export default function Dashboard() {
   const [value, setValue] = useState(0);
   const classes = useStyles();
@@ -79,23 +96,31 @@ export default function Dashboard() {
                 </b>
               </h4>
             </Typography>
+            Safer assets (Bonds)
+            {/* <span className = "text-right">
+              Riskier assets (Stocks)
+            </span> */}
             <Slider
-              defaultValue={Math.floor(Math.random() * 100)}
-              aria-labelledby="discrete-slider-small-steps"
+              defaultValue={23}
+              // aria-labelledby="discrete-slider-small-steps"
+              getAriaValueText={valuetext}
               step={2}
-              marks
               min={0}
               max={100}
               valueLabelDisplay="auto"
+              aria-labelledby="discrete-slider-custom"
               disabled
+              
             />
+            {/* Riskier assetsfffffffffff (Stocks) */}
         </div>
         <div className = "text-center">
           We recommend safer asset classes for you.
         </div>
-        <div className = "text-center">
+        
+        {/* <div className = "text-center">
           We recommend risker asset classes given your strong financial situation
-        </div>
+        </div> */}
       <GridContainer>
       <GridItem xs={12} sm={12} md={4}>
           <Card chart>
@@ -283,7 +308,7 @@ export default function Dashboard() {
         <GridItem xs={12} sm={12} md={12}>
           <CustomTabs
             title="Recommendations:"
-            headerColor="primary"
+            headerColor="success"
             tabs={[
               {
                 tabName: "Investments",

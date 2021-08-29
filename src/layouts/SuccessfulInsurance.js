@@ -60,8 +60,8 @@ export default function SuccessfulInsurance() {
      <div>You will be given points in the next cycle of achievements!</div>
 
      <div>
-     <Button color="primary" onClick = {handleSubmit} >Return to dashboard</Button>
+     <Button color="success" onClick = {handleSubmit} >Return to dashboard</Button>
      </div>
       
-  </div>;
+  </div>
 }
