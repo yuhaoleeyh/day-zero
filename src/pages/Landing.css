@@ -1,6 +1,6 @@
 .landing {
     /* text-align: center; */
-    background-image: url(../mystatic/background1.jpg);
+    /* background-image: url(../mystatic/background1.jpg); */
     background-color: #eeeeee; /* Used if the image is unavailable */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */

@@ -55,7 +55,7 @@ export default function Loans() {
         rejectUnauthorized: false
        });
 
-    axios.get("https://api.day-zero.xyz/credit", { httpsAgent: agent })
+    axios.get("http://api.day-zero.xyz/credit", { httpsAgent: agent })
     .then(response => {
         setCreditScoreMetrics(response.data)
     });

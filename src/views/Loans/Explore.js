@@ -15,7 +15,9 @@ import Slider from '@material-ui/core/Slider';
 import axios from 'axios';
 import Typography from '@material-ui/core/Typography';
 import './explore.css';
-import * as https from 'https'
+import * as https from 'https';
+
+
 
 
 
@@ -38,7 +40,7 @@ export default function Explore() {
         rejectUnauthorized: false
        });
 
-    axios.post("https://api.day-zero.xyz/credit", dict, { httpsAgent: agent })
+    axios.post("http://api.day-zero.xyz/credit", dict, { httpsAgent: agent })
     .then(response => {
         setCreditScore(response.data.credit_percentile)
         const timer = setTimeout(() => {
@@ -62,7 +64,7 @@ export default function Explore() {
         rejectUnauthorized: false
        });
 
-    axios.post("https://api.day-zero.xyz/credit", dict, { httpsAgent: agent })
+    axios.post("http://api.day-zero.xyz/credit", dict, { httpsAgent: agent })
     .then(response => {
         setCreditScore(response.data.credit_percentile)
         const timer = setTimeout(() => {
@@ -86,7 +88,7 @@ export default function Explore() {
             rejectUnauthorized: false
            });
     
-        axios.post("https://api.day-zero.xyz/credit", dict, { httpsAgent: agent })
+        axios.post("http://api.day-zero.xyz/credit", dict, { httpsAgent: agent })
         .then(response => {
             setCreditScore(response.data.credit_percentile)
             const timer = setTimeout(() => {

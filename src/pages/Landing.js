@@ -3,10 +3,12 @@ import Spacer from '../mycomponents/Spacer';
 import { Link } from 'react-router-dom'
 import './Landing.css';
 import React from 'react';
+import Image from '../mystatic/background1.jpg';   
+
 
 function Landing() {
     return (
-        <div className="landing">
+        <div className="landing" style={{ backgroundImage: `url(${Image})`}}>
             <div className="landing-box">
                 <div className="landing-innerbox">
                     <h1>DayZero</h1>

@@ -555,7 +555,7 @@ var data = [
     },
   
     title: {
-      text: "AAPL Historical"
+      text: "AAPL Real data"
     },
   
     yAxis: [
@@ -616,11 +616,20 @@ var data = [
 export default function Data() {
     // eslint-disable-next-line react/react-in-jsx-scope
     return <div>
+        <div className = "text-center">
+            <h2>Sample real time data for understanding!</h2>
+            <p>
+                Click the explore button to view any stock you wish and see our tailored advisor how to observe trends.
+            </p>
+        </div>
     <HighchartsReact
       highcharts={Highcharts}
       constructorType={"stockChart"}
       options={options}
     />
+    <div>
+        <p>Generally upward trending price of stocks</p>
+    </div>
   </div>
   }
   
