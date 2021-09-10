@@ -1,8 +1,11 @@
 MIT License
 
 Creative Tim React
+
 Copyright (c) 2021 Creative Tim
+
 Highcharts React 
+
 Copyright (c) 2016-2017, Highsoft
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,4 +28,5 @@ SOFTWARE.
 
 
 IP for solution
+
 Owned by Goldman Sachs
