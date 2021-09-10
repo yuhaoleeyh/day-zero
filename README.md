@@ -24,6 +24,7 @@ Documentation linked because instructions are necessarily complex, and require m
 - AWS documentation: docs.aws.amazon.com
 - Flask documentation: flask-doc.readthedocs.io
 - React component styling: github.com/timcreative
+- React Highcharts: github.com/highcharts/highcharts-react
 
 # Main features of application
 
