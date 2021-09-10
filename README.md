@@ -7,7 +7,7 @@ Done by: Lee Yu Hao, Aw Khai Loong, Richard Ng, Zhou Min Yuan, Ryan Tan
 
 
 ## Introduction
-This repository contains the source programs for the Ellipsis Tech Series Hackathon 2021 (ETSH).
+This repository contains the source programs for the Ellipsis Tech Series Hackathon 2021 (ETSH). Note that the IP for the solution will be owned by the Hackathon Presenting Partner, Goldman Sachs. 
 
 ## Summary
 
