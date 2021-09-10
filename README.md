@@ -4,8 +4,14 @@
 3rd place for Ellipsis Goldman Sachs AWS Hackathon 2021
 
 Done by: Lee Yu Hao, Aw Khai Loong, Richard Ng, Zhou Min Yuan, Ryan Tan
+
+
 ## Introduction
 This repository contains the source programs for the Ellipsis Tech Series Hackathon 2021 (ETSH).
+
+## Summary
+
+Allowing any user to start from "DayZero", an app that utilises deep learning, financial recommender system and credit score calculation that includes all users on their financial long-term journey.
 
 ## Directories
 - `ETSH-deep-learning/` for training Deep Learning models for credit score percentile prediction
