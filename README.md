@@ -3,7 +3,7 @@
 
 3rd place for Ellipsis Goldman Sachs AWS Hackathon 2021
 
-Done by: Lee Yu Hao, Aw Khai Loong, Richard Ng, Zhou Min Yuan, Ryan Tan
+Done by: Lee Yu Hao, Aw Khai Loong, Richard Ng, Ryan Tan, Zhou Min Yuan
 
 
 ## Introduction
